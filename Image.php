@@ -815,11 +815,8 @@ class Image
     {
         $ctime = 0;
         
-        try {
-                $ctime = filectime($this->file);
-        } 
-        catch (\Exception $e)
-        {
+        if(file_exists($this->file)) {
+            $ctime = filectime($this->file);
         }
 
         $datas = array(
